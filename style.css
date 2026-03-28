@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #f5f7fb;
+    color: #000000;
+}
+
+.container {
+    max-width: 748px;
+    margin: 0px auto;
+    padding: 24px;
+    text-align: center;
+}
+
+/* Announcement Box Styling */
+.announcement_1 {
+    text-align: justify;       /* Forces the text to align evenly on both sides */
+    margin: 24px auto;         /* Adds breathing room above and below */
+    padding: 16px 20px;        /* Adds space inside the box so text doesn't hit the edges */
+    background-color: #ffffff; /* Gives it a white background to stand out from the gradient */
+    border-radius: 8px;        /* Keeps the edges rounded, matching your buttons */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Optional: adds a soft shadow for depth */
+    line-height: 1.6;          /* Improves readability by spacing out the lines of text */
+    max-width: 90%;            /* Ensures it doesn't touch the screen edges on mobile */
+    font-size: 14px;
+}
+
+.preview-image {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 24px auto 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+.note {
+    text-align: center;
+    color: black;
+    font-size: 0.80rem;
+}
+
+
+h1 {
+    margin-bottom: 12px;
+}
+
+.downloads {
+    list-style: none;
+    padding: 0;
+    margin-top: 0; /* Changed from 32px to 0 to remove the forced gap */
+    margin-bottom: 20px;
+}
+
+.downloads li {
+    margin: 12px 0;
+}
+
+.downloads a {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #111827;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    width: 210px; 
+    text-align: center; 
+    box-sizing: border-box; 
+}
+
+.downloads a:hover {
+    opacity: 0.85;
+}
+
+.button-pic {
+    display: block;
+    margin-left: auto;     /* Keeps the image centered horizontally */
+    margin-right: auto;    /* Keeps the image centered horizontally */
+    
+    margin-top: 20px;      /* Change this value to adjust the gap ABOVE the picture */
+    margin-bottom: 5px;   /* Change this value to adjust the gap BELOW the picture */
+    
+    max-width: 100%;
+    width: 50px;           /* Adjust based on your preferred flag size */
+    height: auto;
+}
+
+.announcement_2 {
+    text-align: justify;       /* Forces the text to align evenly on both sides */
+    margin: 24px auto;         /* Adds breathing room above and below */
+    padding: 16px 20px;        /* Adds space inside the box so text doesn't hit the edges */
+    background-color: yellow; /* Gives it a white background to stand out from the gradient */
+    border-radius: 8px;        /* Keeps the edges rounded, matching your buttons */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Optional: adds a soft shadow for depth */
+    line-height: 1.6;          /* Improves readability by spacing out the lines of text */
+    max-width: 90%;            /* Ensures it doesn't touch the screen edges on mobile */
+    font-size: 14px;
+}
+
+.qr {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  }
+
+html {
+  height:100%;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:5s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        gap: 15px;
+    }
+}
