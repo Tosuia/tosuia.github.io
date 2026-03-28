@@ -24,20 +24,20 @@ body {
     background-color: #ffffff; /* Gives it a white background to stand out from the gradient */
     border-radius: 8px;        /* Keeps the edges rounded, matching your buttons */
     box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Optional: adds a soft shadow for depth */
-    line-height: 1.6;          /* Improves readability by spacing out the lines of text */
+    line-height: 1.4;          /* Improves readability by spacing out the lines of text */
     max-width: 100%;            /* Ensures it doesn't touch the screen edges on mobile */
     font-size: 14px;
 }
 
 .preview-image {
     display: block;
-    max-width: 100%;
-    width: 500px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
     margin: 24px auto 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
-
 
 .note {
     text-align: center;
@@ -97,7 +97,7 @@ h1 {
     background-color: yellow; /* Gives it a white background to stand out from the gradient */
     border-radius: 8px;        /* Keeps the edges rounded, matching your buttons */
     box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Optional: adds a soft shadow for depth */
-    line-height: 1.6;          /* Improves readability by spacing out the lines of text */
+    line-height: 1.4;          /* Improves readability by spacing out the lines of text */
     max-width: 100%;            /* Ensures it doesn't touch the screen edges on mobile */
     font-size: 14px;
 }
