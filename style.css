@@ -4,148 +4,228 @@
 
 body {
     margin: 0;
+    padding: 24px;
     font-family: 'Open Sans', sans-serif;
-    background: #f5f7fb;
-    color: #000000;
+    color: #E5DADA;
+    background:
+        radial-gradient(circle at top, #1e293b 40%, #0f172a 65%, #020617 100%);
 }
 
 .container {
-    max-width: 648px;
-    margin: 0px auto;
-    padding: 24px;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 40px;
     text-align: center;
+    background: rgba(15, 23, 42, 0.82);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 28px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
 }
 
-/* Announcement Box Styling */
-.announcement_1 {
-    text-align: justify;       /* Forces the text to align evenly on both sides */
-    margin: 24px auto;         /* Adds breathing room above and below */
-    padding: 16px 20px;        /* Adds space inside the box so text doesn't hit the edges */
-    background-color: #ffffff; /* Gives it a white background to stand out from the gradient */
-    border-radius: 8px;        /* Keeps the edges rounded, matching your buttons */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Optional: adds a soft shadow for depth */
-    line-height: 1.4;          /* Improves readability by spacing out the lines of text */
-    max-width: 90%;            /* Ensures it doesn't touch the screen edges on mobile */
-    font-size: 14px;
+.eyebrow {
+    margin: 0 0 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FAA916;
+}
+
+.header-text h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #f8fafc;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #94a3b8;
 }
 
 .preview-image {
     display: block;
     width: 100%;
-    max-width: 90%;
+    max-width: 540px;
     height: auto;
-    margin: 24px auto 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-}
-.note {
-    text-align: center;
-    color: black;
-    font-size: 0.80rem;
+    margin: 30px auto 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
 }
 
+.updated {
+    margin: 0 0 28px;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
 
-h1 {
-    margin-bottom: 12px;
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0 30px;
+}
+
+.lang-card {
+    padding: 22px 18px;
+    background: rgba(30, 41, 59, 0.78);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.lang-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.flag {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.lang-card h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f8fafc;
 }
 
 .downloads {
     list-style: none;
     padding: 0;
-    margin-top: 0; /* Changed from 32px to 0 to remove the forced gap */
-    margin-bottom: 20px;
+    margin: 0;
 }
 
-.downloads li {
-    margin: 12px 0;
+.downloads li + li {
+    margin-top: 12px;
 }
 
 .downloads a {
-    display: inline-block;
-    padding: 12px 18px;
-    background: #111827;
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #1f3a45, #2c4a57);
+    color: #f8fafc;
     text-decoration: none;
-    border-radius: 8px;
-    width: 210px; 
-    text-align: center; 
-    box-sizing: border-box; 
+    border-radius: 14px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.24),
+        0 0 18px rgba(103, 232, 249, 0.04);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease;
 }
 
 .downloads a:hover {
-    opacity: 0.85;
+    transform: translateY(0px);
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.30),
+        0 0 20px rgba(103, 232, 249, 0.06);
+    filter: brightness(1.50);
 }
 
-.button-pic {
-    display: block;
-    margin-left: auto;     /* Keeps the image centered horizontally */
-    margin-right: auto;    /* Keeps the image centered horizontally */
-    
-    margin-top: 20px;      /* Change this value to adjust the gap ABOVE the picture */
-    margin-bottom: 5px;   /* Change this value to adjust the gap BELOW the picture */
-    
+.announcement_1,
+.announcement_2 {
+    margin: 22px auto;
+    padding: 16px 18px;
+    text-align: left;
+    border-radius: 16px;
+    line-height: 1.55;
     max-width: 100%;
-    width: 50px;           /* Adjust based on your preferred flag size */
-    height: auto;
+    font-size: 0.96rem;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.announcement_1 {
+    background: rgba(30, 41, 59, 0.88);
+    border: 1px solid #6eb807;
+    border-left: 5px solid #6eb807;
+    color: #dbeafe;
 }
 
 .announcement_2 {
-    text-align: justify;       /* Forces the text to align evenly on both sides */
-    margin: 24px auto;         /* Adds breathing room above and below */
-    padding: 16px 20px;        /* Adds space inside the box so text doesn't hit the edges */
-    background-color: yellow; /* Gives it a white background to stand out from the gradient */
-    border-radius: 8px;        /* Keeps the edges rounded, matching your buttons */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Optional: adds a soft shadow for depth */
-    line-height: 1.4;          /* Improves readability by spacing out the lines of text */
-    max-width: 90%;            /* Ensures it doesn't touch the screen edges on mobile */
-    font-size: 14px;
+    background: rgba(69, 26, 3, 0.55);
+    border: 1px solid #f59e0b;
+    border-left: 5px solid #f59e0b;
+    color: #fde68a;
+}
+
+.support-card {
+    margin-top: 30px;
+    padding: 24px 20px 28px;
+    border-radius: 22px;
+    background: rgba(30, 41, 59, 0.78);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.note {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.contact {
+    margin: 0 0 18px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.contact a {
+    color: #e0f2fe;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
 
 .qr {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-  }
-
-html {
-  height:100%;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
 }
 
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
+@media (max-width: 700px) {
+    body {
+        padding: 14px;
+    }
 
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:5s;
-}
+    .container {
+        padding: 24px 16px 30px;
+        border-radius: 22px;
+    }
 
-.bg3 {
-  animation-duration:5s;
-}
+    .download-grid {
+        grid-template-columns: 1fr;
+    }
 
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
+    .header-text p {
+        font-size: 1rem;
+    }
 
-@media (max-width: 768px) {
-    .header-wrapper {
-        flex-direction: column; /* Stacks items vertically on small screens */
-        gap: 15px;
+    .downloads a {
+        min-height: 50px;
     }
 }
