@@ -149,6 +149,114 @@ body {
     filter: brightness(1.30);
 }
 
+/* Moving white glow border for download cards */
+.lang-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(255, 255, 255, 1) 50%,
+        transparent 65%,
+        transparent 100%
+    );
+    background-size: 220% 220%;
+    background-position: 220% 50%;
+    opacity: 0;
+    pointer-events: none;
+
+    /* No animation by default */
+    animation: none;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.lang-card:hover::before {
+    opacity: 1;
+
+    /* Runs once */
+    animation: glow-border-move 5s infinite alternate;
+}
+
+
+/* Moving white glow border for download buttons */
+.downloads a {
+    position: relative;
+    overflow: hidden;
+}
+
+.downloads a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(255, 255, 255, 1) 50%,
+        transparent 65%,
+        transparent 100%
+    );
+    background-size: 220% 220%;
+    background-position: 220% 50%;
+    opacity: 0;
+    pointer-events: none;
+
+    /* No animation by default */
+    animation: none;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.downloads a:hover::before {
+    opacity: 1;
+
+    /* Runs once */
+    animation: glow-border-move 5s infinite alternate;
+}
+
+@keyframes glow-border-move {
+    from {
+        background-position: 220% 50%;
+    }
+    to {
+        background-position: -220% 50%;
+    }
+}
+
+/* Accessibility: disable motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .lang-card:hover::before,
+    .downloads a:hover::before {
+        animation: none;
+    }
+}
+
 .announcement_1,
 .announcement_2 {
     margin: 22px auto;
