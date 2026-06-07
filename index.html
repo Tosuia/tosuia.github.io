@@ -1,51 +1,93 @@
 <!DOCTYPE html>
-<html lang='cs'>
+<html lang='cs' data-theme='dark'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
     <title>PDF/JPG Plánovací kalendáře</title>
-    <meta name="description" content="Plánovací kalendáře ke stažení zdarma ve formátech PDF a JPG. České a slovenské verze pro tisk na A4 nebo A3.">
-    <link rel="canonical" href="https://tosuia.github.io">
+    <meta name='description' content='Plánovací kalendáře ke stažení zdarma ve formátech PDF a JPG. České a slovenské verze pro tisk na A4 nebo A3.'>
+    <link rel='canonical' href='https://tosuia.github.io'>
 
-    <link rel="icon" type="image/png" href="img/my-icon.png">
+    <link rel='icon' type='image/png' href='img/my-icon.png'>
 
-    <meta property="og:title" content="PDF/JPG Plánovací kalendáře">
-    <meta property="og:description" content="České a slovenské plánovací kalendáře ke stažení zdarma ve formátech PDF a JPG.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tosuia.github.io/">
-    <meta property="og:image" content="https://tosuia.github.io/img/pk_preview.png">
+    <meta property='og:title' content='PDF/JPG Plánovací kalendáře'>
+    <meta property='og:description' content='České a slovenské plánovací kalendáře ke stažení zdarma ve formátech PDF a JPG.'>
+    <meta property='og:type' content='website'>
+    <meta property='og:url' content='https://tosuia.github.io/'>
+    <meta property='og:image' content='https://tosuia.github.io/img/pk_preview.png'>
+    <meta name='theme-color' content='#120d08'>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='style.css'>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VYE45JZ54"></script>
+    <!-- Set theme before paint to avoid a flash of the wrong mode -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (!saved) {
+                    saved = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                }
+                document.documentElement.setAttribute('data-theme', saved);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-2VYE45JZ54'></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag("js", new Date());
-        gtag("config", "G-2VYE45JZ54");
+        gtag('js', new Date());
+        gtag('config', 'G-2VYE45JZ54');
     </script>
 </head>
 <body>
-    <main class='container'>
-        <p class='eyebrow'>PDF a JPG ke stažení zdarma</p>
+    <main class='container' aria-label='Plánovací kalendáře ke stažení'>
+        <button id='theme-toggle' class='theme-toggle' type='button' aria-label='Přepnout světlý a tmavý režim' title='Přepnout režim'>
+            <svg class='icon-sun' viewBox='0 0 24 24' aria-hidden='true'>
+                <circle cx='12' cy='12' r='4.2'></circle>
+                <g stroke-linecap='round'>
+                    <line x1='12' y1='2.2' x2='12' y2='5'></line>
+                    <line x1='12' y1='19' x2='12' y2='21.8'></line>
+                    <line x1='2.2' y1='12' x2='5' y2='12'></line>
+                    <line x1='19' y1='12' x2='21.8' y2='12'></line>
+                    <line x1='4.9' y1='4.9' x2='6.9' y2='6.9'></line>
+                    <line x1='17.1' y1='17.1' x2='19.1' y2='19.1'></line>
+                    <line x1='4.9' y1='19.1' x2='6.9' y2='17.1'></line>
+                    <line x1='17.1' y1='6.9' x2='19.1' y2='4.9'></line>
+                </g>
+            </svg>
+            <svg class='icon-moon' viewBox='0 0 24 24' aria-hidden='true'>
+                <path d='M20.5 14.4A8 8 0 0 1 9.6 3.5a0.6 0.6 0 0 0-0.8-0.8 9.2 9.2 0 1 0 12.5 12.5 0.6 0.6 0 0 0-0.8-0.8z'></path>
+            </svg>
+        </button>
 
-        <header class='header-text'>
-            <h1>Plánovací kalendáře<br>2026 & 2027</h1>
-            <p>České a slovenské PDF a JPG verze.<br>Jinak nic k vidění..</p>
-        </header>
+        <section class='hero' aria-labelledby='page-title'>
+            <p class='eyebrow'>PDF a JPG ke stažení zdarma</p>
 
-        <img src='img/pk_preview.png' alt='Náhled plánovacího kalendáře' class='preview-image'>
-        <p class='updated'>Aktualizováno 29.05.2026</p>
+            <header class='header-text'>
+                <h1 id='page-title'>Plánovací kalendáře<br>2026 &amp; 2027</h1>
+                <p>České a slovenské PDF a JPG verze.<br>Jinak nic k vidění..</p>
+            </header>
 
-        <section class='download-grid'>
+            <div class='preview-frame'>
+                <img src='img/pk_preview.png' alt='Náhled plánovacího kalendáře' class='preview-image'>
+            </div>
+            <p class='updated'>Aktualizováno 07.06.2026</p>
+        </section>
+
+        <section class='download-grid' aria-label='Stažení kalendářů'>
             <div class='lang-card'>
                 <div class='lang-head'>
                     <img src='img/cz.png' alt='Česká verze' class='flag'>
-                    <h2>CZ</h2>
+                    <div>
+                        <p class='lang-label'>Česká verze</p>
+                        <h2>CZ</h2>
+                    </div>
                 </div>
 
                 <ul class='downloads'>
@@ -53,18 +95,21 @@
                     <li><a href='pdf/PK_2027_CZ_600.pdf' download='PK_2027_CZ_600.pdf'>PDF 2027</a></li>
                     <li><a href='pdf/PK_26_27_CZ_600.pdf' download='PK_26_27_CZ_600.pdf'>PDF kombo</a></li>
                     
-                    <li class="downloads-divider" aria-hidden="true"></li>
+                    <li class='downloads-divider' aria-hidden='true'></li>
                     
                     <li><a href='jpg/PK_2026_CZ_600.jpg' download='PK_2026_CZ_600.jpg'>JPG 2026</a></li>
                     <li><a href='jpg/PK_2027_CZ_600.jpg' download='PK_2027_CZ_600.jpg'>JPG 2027</a></li>
                     <li><a href='jpg/PK_26_27_CZ_600.jpg' download='PK_26_27_CZ_600.jpg'>JPG kombo</a></li>           
                 </ul>
-                </div>
+            </div>
 
             <div class='lang-card'>
                 <div class='lang-head'>
                     <img src='img/sk.png' alt='Slovenská verzia' class='flag'>
-                    <h2>SK</h2>
+                    <div>
+                        <p class='lang-label'>Slovenská verzia</p>
+                        <h2>SK</h2>
+                    </div>
                 </div>
 
                 <ul class='downloads'>
@@ -72,7 +117,7 @@
                     <li><a href='pdf/PK_2027_SK_600.pdf' download='PK_2027_SK_600.pdf'>PDF 2027</a></li>
                     <li><a href='pdf/PK_26_27_SK_600.pdf' download='PK_26_27_SK_600.pdf'>PDF kombo</a></li>
 
-                    <li class="downloads-divider" aria-hidden="true"></li>
+                    <li class='downloads-divider' aria-hidden='true'></li>
                     
                     <li><a href='jpg/PK_2026_SK_600.jpg' download='PK_2026_SK_600.jpg'>JPG 2026</a></li>
                     <li><a href='jpg/PK_2027_SK_600.jpg' download='PK_2027_SK_600.jpg'>JPG 2027</a></li>
@@ -81,14 +126,16 @@
             </div>
         </section>
 
-        <div class='announcement_1'>
-            <b>CZ verze:</b> <i>Beze změny</i><br>
-            <b>SK verzia:</b> <i>V roku 2026 nie sú sviatky 8.5. a 15.9. dňami pracovného pokoja (zák. č. 241/1993 Z. z.).</i>
-        </div>
+        <section class='notice-stack' aria-label='Poznámky'>
+            <div class='announcement_1'>
+                <b>CZ verze:</b> <i>Beze změny</i><br>
+                <b>SK verzia:</b> <i>V roku 2026 nie sú sviatky 8.5. a 15.9. dňami pracovného pokoja (zák. č. 241/1993 Z. z.).</i>
+            </div>
 
-        <div class='announcement_2'>
-            Pro nejlepší výsledek zvol při tisku na formát A4 možnost 'Skutečná velikost'. Pro tisk na formát A3 vyber možnost 'Přizpůsobit'.
-        </div>
+            <div class='announcement_2'>
+                Pro nejlepší výsledek zvol při tisku na formát A4 možnost 'Skutečná velikost'. Pro tisk na formát A3 vyber možnost 'Přizpůsobit'.
+            </div>
+        </section>
 
         <section class='support-card'>
             <p class='note'>Kalendář na jiný rok? Podněty? Chyby?</p>
@@ -98,8 +145,31 @@
 
             <img class='qr' src='img/10.png' alt='QR kód pro příspěvek na kafe'>
         </section>
-
-        <script src='tracking.js'></script>
     </main>
+
+    <script src='tracking.js'></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('theme-toggle');
+            if (!btn) return;
+            var themeMeta = document.querySelector('meta[name="theme-color"]');
+
+            function syncMeta(theme) {
+                if (themeMeta) {
+                    themeMeta.setAttribute('content', theme === 'light' ? '#f7efe3' : '#120d08');
+                }
+            }
+
+            syncMeta(document.documentElement.getAttribute('data-theme') || 'dark');
+
+            btn.addEventListener('click', function () {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncMeta(next);
+            });
+        })();
+    </script>
 </body>
 </html>
