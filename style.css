@@ -17,6 +17,9 @@
     --success: #9ccd6f;
     --warning: #f2c66f;
     --focus: #f7d47d;
+    --backdrop-opacity: 0.50;
+    --backdrop-tint: rgba(18, 13, 8, 0.45);
+    --backdrop-blend: luminosity;
     --radius-xl: 34px;
     --radius-lg: 24px;
     --radius-md: 16px;
@@ -41,6 +44,9 @@
     --success: #4f7b25;
     --warning: #9b620d;
     --focus: #8c5f17;
+    --backdrop-opacity: 0.50;
+    --backdrop-tint: rgba(247, 239, 227, 0.55);
+    --backdrop-blend: luminosity;
 }
 
 * {
@@ -198,6 +204,8 @@ a:focus-visible {
     position: relative;
     z-index: 1;
     padding-top: 26px;
+    /* leaves room for the backdrop to fade out before the download grid */
+    padding-bottom: clamp(36px, 7vw, 72px);
 }
 
 .eyebrow {
@@ -237,6 +245,7 @@ a:focus-visible {
     line-height: 0.9;
     letter-spacing: -0.055em;
     text-wrap: balance;
+    text-shadow: 0 2px 26px var(--shadow);
 }
 
 .header-text p {
@@ -248,33 +257,32 @@ a:focus-visible {
     line-height: 1.7;
 }
 
-.preview-frame {
-    overflow: hidden;
-    position: relative;
-    width: min(100%, 620px);
-    margin: clamp(28px, 5vw, 42px) auto 18px;
-    padding: clamp(9px, 1.8vw, 14px);
-    border: 1px solid var(--line-strong);
-    border-radius: 28px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.035));
-    box-shadow:
-        0 26px 60px var(--shadow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-
-.preview-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 19px;
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26);
+/* ---------- Sunken calendar backdrop (replaces the framed preview image) ---------- */
+.card-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* image is 1600x770 (~2.08:1) — keep the band close to that ratio */
+    height: min(48vw, 430px);
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(to bottom, var(--backdrop-tint), var(--backdrop-tint)),
+        url('img/pk_preview.png');
+    background-size: cover;
+    background-position: center top;
+    background-blend-mode: var(--backdrop-blend);
+    opacity: var(--backdrop-opacity);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 96%);
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 96%);
 }
 
 .updated {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    margin: 0 0 34px;
+    margin: clamp(20px, 4vw, 32px) 0 0;
     color: var(--text-muted);
     font-size: 0.92rem;
     font-weight: 700;
