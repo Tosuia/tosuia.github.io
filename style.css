@@ -17,7 +17,7 @@
     --success: #9ccd6f;
     --warning: #f2c66f;
     --focus: #f7d47d;
-    --backdrop-opacity: 0.50;
+    --backdrop-opacity: 0.42;
     --backdrop-tint: rgba(18, 13, 8, 0.45);
     --backdrop-blend: luminosity;
     --radius-xl: 34px;
@@ -44,7 +44,7 @@
     --success: #4f7b25;
     --warning: #9b620d;
     --focus: #8c5f17;
-    --backdrop-opacity: 0.50;
+    --backdrop-opacity: 0.28;
     --backdrop-tint: rgba(247, 239, 227, 0.55);
     --backdrop-blend: luminosity;
 }
@@ -257,10 +257,9 @@ a:focus-visible {
     line-height: 1.7;
 }
 
-/* ---------- Sunken calendar backdrop (replaces the framed preview image) ---------- */
+/* ---------- Sunken calendar backdrops (top hero + bottom support) ---------- */
 .card-backdrop {
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     /* image is 1600x770 (~2.08:1) — keep the band close to that ratio */
@@ -271,11 +270,22 @@ a:focus-visible {
         linear-gradient(to bottom, var(--backdrop-tint), var(--backdrop-tint)),
         url('img/pk_preview.jpg');
     background-size: cover;
-    background-position: center top;
     background-blend-mode: var(--backdrop-blend);
     opacity: var(--backdrop-opacity);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 96%);
-    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 96%);
+}
+
+.card-backdrop--top {
+    top: 0;
+    background-position: center top;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 38%, transparent 96%);
+    mask-image: linear-gradient(to bottom, black 0%, black 38%, transparent 96%);
+}
+
+.card-backdrop--bottom {
+    bottom: 0;
+    background-position: center bottom;
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 32%, transparent 96%);
+    mask-image: linear-gradient(to top, black 0%, black 32%, transparent 96%);
 }
 
 .updated {
@@ -307,7 +317,6 @@ a:focus-visible {
 }
 
 .lang-card,
-.support-card,
 .announcement_1,
 .announcement_2 {
     position: relative;
@@ -492,21 +501,12 @@ a:focus-visible {
     color: var(--heading);
 }
 
-.support-card {
+.support {
+    position: relative;
     z-index: 1;
     margin-top: 30px;
-    padding: clamp(24px, 4vw, 32px) 20px 30px;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-}
-
-.support-card::before {
-    content: '';
-    position: absolute;
-    inset: 12px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    pointer-events: none;
+    /* generous top padding lets the backdrop fade in above the content */
+    padding: clamp(40px, 8vw, 84px) 20px 6px;
 }
 
 .note {
@@ -515,6 +515,7 @@ a:focus-visible {
     color: var(--text-muted);
     font-size: 0.96rem;
     font-weight: 700;
+    text-shadow: 0 1px 14px var(--shadow);
 }
 
 .contact {
@@ -522,6 +523,7 @@ a:focus-visible {
     margin: 0 0 20px;
     font-size: clamp(1.1rem, 3vw, 1.35rem);
     font-weight: 800;
+    text-shadow: 0 1px 18px var(--shadow);
 }
 
 .contact a {
