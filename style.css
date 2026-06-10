@@ -269,7 +269,7 @@ a:focus-visible {
     pointer-events: none;
     background-image:
         linear-gradient(to bottom, var(--backdrop-tint), var(--backdrop-tint)),
-        url('img/pk_preview.png');
+        url('img/pk_preview.jpg');
     background-size: cover;
     background-position: center top;
     background-blend-mode: var(--backdrop-blend);
