@@ -17,7 +17,7 @@
     --success: #9ccd6f;
     --warning: #f2c66f;
     --focus: #f7d47d;
-    --backdrop-opacity: 0.42;
+    --backdrop-opacity: 0.60;
     --backdrop-tint: rgba(18, 13, 8, 0.45);
     --backdrop-blend: luminosity;
     --radius-xl: 34px;
@@ -44,7 +44,7 @@
     --success: #4f7b25;
     --warning: #9b620d;
     --focus: #8c5f17;
-    --backdrop-opacity: 0.28;
+    --backdrop-opacity: 0.60;
     --backdrop-tint: rgba(247, 239, 227, 0.55);
     --backdrop-blend: luminosity;
 }
