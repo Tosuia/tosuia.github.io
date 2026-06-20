@@ -17,7 +17,7 @@
     --success: #9ccd6f;
     --warning: #f2c66f;
     --focus: #f7d47d;
-    --backdrop-opacity: 0.70;
+    --backdrop-opacity: 0.60;
     --backdrop-tint: rgba(18, 13, 8, 0.45);
     --backdrop-blend: luminosity;
     --radius-xl: 34px;
@@ -318,7 +318,8 @@ a:focus-visible {
 
 .lang-card,
 .announcement_1,
-.announcement_2 {
+.announcement_2,
+.announcement_3 {
     position: relative;
     border: 1px solid var(--line);
     background:
@@ -477,7 +478,8 @@ a:focus-visible {
 }
 
 .announcement_1,
-.announcement_2 {
+.announcement_2,
+.announcement_3 {
     max-width: 100%;
     margin: 18px auto;
     padding: 18px 20px 18px 22px;
@@ -489,15 +491,20 @@ a:focus-visible {
 }
 
 .announcement_1 {
-    border-left: 5px solid var(--success);
+    border-left: 5px solid #54ba06;
 }
 
 .announcement_2 {
-    border-left: 5px solid var(--warning);
+    border-left: 5px solid #f7a707;
+}
+
+.announcement_3 {
+    border-left: 5px solid #0783f7;
 }
 
 .announcement_1 b,
-.announcement_2 b {
+.announcement_2 b,
+.announcement_3 b {
     color: var(--heading);
 }
 
