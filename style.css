@@ -487,7 +487,10 @@ a:focus-visible {
     color: var(--text);
     font-size: 0.97rem;
     line-height: 1.65;
-    text-align: left;
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    padding-inline: 1rem;
 }
 
 .announcement_1 {
