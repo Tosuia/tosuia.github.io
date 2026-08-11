@@ -511,12 +511,23 @@ a:focus-visible {
     color: var(--heading);
 }
 
+.logo_rf {
+    display: block;          /* was: flexy */
+    width: 90px;
+    height: 90px;
+    margin: clamp(34px, 6vw, 60px) auto;   /* equal top & bottom, keeps it centred */
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 28px var(--shadow);
+}
+
 .support {
     position: relative;
     z-index: 1;
-    margin-top: 30px;
-    /* generous top padding lets the backdrop fade in above the content */
-    padding: clamp(40px, 8vw, 84px) 20px 6px;
+    margin-top: 0;           /* was 30px */
+    padding: 0 20px 6px;     /* top padding moved into .logo_rf's margin */
 }
 
 .note {
