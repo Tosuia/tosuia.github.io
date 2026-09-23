@@ -268,7 +268,7 @@ a:focus-visible {
     pointer-events: none;
     background-image:
         linear-gradient(to bottom, var(--backdrop-tint), var(--backdrop-tint)),
-        url('img/pk_preview.jpg');
+        url('img/backdrop.jpg');
     background-size: cover;
     background-blend-mode: var(--backdrop-blend);
     opacity: var(--backdrop-opacity);
