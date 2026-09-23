@@ -534,6 +534,13 @@ a:focus-visible {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 12px 28px var(--shadow);
+    animation: spinSlow 30s linear infinite;
+}
+
+@keyframes spinSlow {
+    to { transform: rotate(360deg); }
+}
+
 }
 
 .support {
