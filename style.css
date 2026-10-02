@@ -242,7 +242,7 @@ a:focus-visible {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: clamp(3rem, 10vw, 6rem);
     font-weight: 700;
-    line-height: 0.9;
+    line-height: 1.05;
     letter-spacing: -0.055em;
     text-wrap: balance;
     text-shadow: 0 2px 26px var(--shadow);
