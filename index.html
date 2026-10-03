@@ -20,19 +20,17 @@
     <link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='style.css'>
     <!-- Set theme before paint to avoid a flash of the wrong mode -->
-    <script>
-      (function() {
+    <!-- Set theme before paint to avoid a flash of the wrong mode -->
+<script>
+    (function() {
         try {
-          var saved = localStorage.getItem('theme');
-          if (!saved) {
-            saved = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-          }
-          document.documentElement.setAttribute('data-theme', saved);
+            var saved = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', saved);
         } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
-      })();
-    </script>
+    })();
+</script>
     <script async src='https://www.googletagmanager.com/gtag/js?id=G-2VYE45JZ54'></script>
     <script>
       window.dataLayer = window.dataLayer || [];
