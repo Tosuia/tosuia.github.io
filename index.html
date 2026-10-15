@@ -228,6 +228,7 @@
         var message = document.getElementById('feedback-message');
         var storageKey = 'calendar-site-feedback';
         var feedbackMessageTimer;
+        var submittedFeedback = null;
 
         if (!upButton || !downButton || !message) return;
 
@@ -262,17 +263,21 @@
         }
 
         function saveFeedback(choice) {
-          var previousChoice = null;
+          var previousChoice = submittedFeedback;
 
           try {
-            previousChoice = localStorage.getItem(storageKey);
+            previousChoice = localStorage.getItem(storageKey) || previousChoice;
           } catch (e) {}
 
-          // Do not send another Analytics event if the visitor clicks
-          // the same thumb again.
-          if (previousChoice !== choice) {
-            sendFeedbackToAnalytics(choice, previousChoice);
+          if (previousChoice === 'up' || previousChoice === 'down') {
+            submittedFeedback = previousChoice;
+            setFeedback(previousChoice, false);
+            message.textContent = 'Tady se už hodnotilo..';
+            return;
           }
+
+          submittedFeedback = choice;
+          sendFeedbackToAnalytics(choice, null);
 
           try {
             localStorage.setItem(storageKey, choice);
@@ -292,6 +297,7 @@
         try {
           var savedFeedback = localStorage.getItem(storageKey);
           if (savedFeedback === 'up' || savedFeedback === 'down') {
+            submittedFeedback = savedFeedback;
             setFeedback(savedFeedback, false);
           }
         } catch (e) {}
