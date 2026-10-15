@@ -227,6 +227,7 @@
         var downButton = document.getElementById('feedback-down');
         var message = document.getElementById('feedback-message');
         var storageKey = 'calendar-site-feedback';
+        var feedbackMessageTimer;
 
         if (!upButton || !downButton || !message) return;
 
@@ -239,8 +240,13 @@
           upButton.setAttribute('aria-pressed', String(isUp));
           downButton.setAttribute('aria-pressed', String(isDown));
 
+          clearTimeout(feedbackMessageTimer);
+
           if (choice) {
-            message.textContent = announce ? (isUp ? 'Paráda! Díky😊' : 'Hmmm😏') : 'Hodnocení odesláno..';
+            message.textContent = announce ? (isUp ? 'Paráda! Díky😊' : 'Hmmm..😏') : 'Tady se už hodnotilo..';
+            feedbackMessageTimer = setTimeout(function() {
+              message.textContent = '';
+            }, 3000);
           } else {
             message.textContent = '';
           }
