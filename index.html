@@ -243,8 +243,8 @@
 
           clearTimeout(feedbackMessageTimer);
 
-          if (choice) {
-            message.textContent = announce ? (isUp ? 'Paráda! Díky😊' : 'Hmmm..😏') : 'Tady se už hodnotilo..';
+          if (choice && announce) {
+            message.textContent = isUp ? 'Paráda! Díky😊' : 'Hmmm..😏';
             feedbackMessageTimer = setTimeout(function() {
               message.textContent = '';
             }, 3000);
@@ -271,7 +271,7 @@
 
           if (previousChoice === 'up' || previousChoice === 'down') {
             submittedFeedback = previousChoice;
-            setFeedback(previousChoice, false);
+            setFeedback(previousChoice, true);
             message.textContent = 'Tady se už hodnotilo..';
             return;
           }
