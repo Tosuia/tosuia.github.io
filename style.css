@@ -313,7 +313,7 @@ a:focus-visible {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(18px, 3vw, 24px);
-    margin: 0 0 18px;
+    margin: 0 0 28px;
 }
 
 .download-grid .lang-card:nth-child(3) {
@@ -539,6 +539,79 @@ a:focus-visible {
 
 @keyframes spinSlow {
     to { rotate: 360deg; }
+}
+
+/* ---------- Simple thumbs up/down feedback ---------- */
+.feedback {
+    position: relative;
+    z-index: 1;
+    margin: calc(clamp(34px, 6vw, 60px) * -0.45) auto clamp(28px, 5vw, 44px);
+    text-align: center;
+}
+
+.feedback-title {
+    margin: 0 0 12px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.feedback-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.feedback-button {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.feedback-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.feedback-button--up {
+    color: #04912a;
+}
+
+.feedback-button--up:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.feedback-button--up.is-selected {
+    color: #04912a;
+}
+
+.feedback-button--down {
+    color: #c40404;
+}
+
+.feedback-button--down:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.feedback-button--down.is-selected {
+    color: #c40404;
+}
+
+.feedback-message {
+    min-height: 1.4em;
+    margin: 10px 0 0;
+    color: var(--gold-2);
+    font-size: 0.82rem;
+    font-weight: 700;
 }
 
 .support {
