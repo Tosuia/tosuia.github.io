@@ -485,7 +485,7 @@ a:focus-visible {
 .announcement_1 {
     max-width: 100%;
     margin: 12px auto;    
-    color: var(--text);
+    color: var(--text-muted);
     font-size: 0.97rem;
     line-height: 1.65;
     text-align: center;
