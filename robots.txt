@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /img/
 Allow: /
 
 Sitemap: https://tosuia.github.io/sitemap.xml
