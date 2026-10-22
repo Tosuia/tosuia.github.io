@@ -664,6 +664,23 @@ a:focus-visible {
     box-shadow: 0 20px 42px var(--shadow);
 }
 
+.calendar-preview {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 18px auto;
+    border-radius: 10px;
+}
+
+:root[data-theme='light'] .calendar-preview {
+    box-shadow:
+        0 4px 12px rgba(73, 48, 17, 0.10),
+        0 18px 42px rgba(73, 48, 17, 0.18);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
 @keyframes shimmer {
     from {
         background-position: 140% 50%;
