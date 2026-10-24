@@ -14,8 +14,8 @@
     --line: rgba(246, 221, 157, 0.24);
     --line-strong: rgba(246, 221, 157, 0.46);
     --shadow: rgba(0, 0, 0, 0.46);
-    --success: #9ccd6f;
-    --warning: #f2c66f;
+    --success: #3ec91e;
+    --warning: #f52b0c;
     --focus: #f7d47d;
     --backdrop-opacity: 0.60;
     --backdrop-tint: rgba(18, 13, 8, 0.45);
@@ -41,8 +41,8 @@
     --line: rgba(113, 79, 32, 0.22);
     --line-strong: rgba(113, 79, 32, 0.42);
     --shadow: rgba(73, 48, 17, 0.18);
-    --success: #4f7b25;
-    --warning: #9b620d;
+    --success: #3ec91e;
+    --warning: #f52b0c;
     --focus: #8c5f17;
     --backdrop-opacity: 0.60;
     --backdrop-tint: rgba(247, 239, 227, 0.55);
@@ -585,7 +585,7 @@ a:focus-visible {
 }
 
 .feedback-button--up {
-    color: #04912a;
+    color: var(--success);
 }
 
 .feedback-button--up:hover {
@@ -593,11 +593,11 @@ a:focus-visible {
 }
 
 .feedback-button--up.is-selected {
-    color: #04912a;
+    color: var(--success)
 }
 
 .feedback-button--down {
-    color: #c40404;
+    color: var(--warning);
 }
 
 .feedback-button--down:hover {
@@ -605,7 +605,7 @@ a:focus-visible {
 }
 
 .feedback-button--down.is-selected {
-    color: #c40404;
+    color: var(--warning)
 }
 
 .feedback-message {
