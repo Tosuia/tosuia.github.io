@@ -672,7 +672,7 @@ a:focus-visible {
     max-width: 680px;
     height: auto;
     margin: 18px auto;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 :root[data-theme='light'] .calendar-preview {
