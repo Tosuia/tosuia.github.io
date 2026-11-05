@@ -1,6 +1,4 @@
-User-agent: Googlebot-Image
-Disallow: /img/
-Allow: /img/preview.png
-Allow: /img/calendar-preview.png
+User-agent: *
+Allow: /
 
 Sitemap: https://tosuia.github.io/sitemap.xml
