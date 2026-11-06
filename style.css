@@ -672,6 +672,7 @@ a:focus-visible {
     max-width: 680px;
     height: auto;
     margin: 18px auto;
+    border: 1px solid var(--line);
     border-radius: 18px;
 }
 
