@@ -632,6 +632,17 @@ a:focus-visible {
     text-shadow: 0 1px 14px var(--shadow);
 }
 
+.copyright {
+    position: relative;
+    margin: 0 0 8px;
+    color: var(--text-muted);
+    font-size: 0.80rem;
+    font-weight: 100;
+    text-shadow: 0 1px 14px var(--shadow);
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+
 .contact {
     position: relative;
     margin: 0 0 20px;
