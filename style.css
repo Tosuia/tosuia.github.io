@@ -785,3 +785,10 @@ a:focus-visible {
         padding: 16px;
     }
 }
+
+@media (width > 760px) {
+    .calendar-preview {
+        max-width: 520px;
+    }
+}
+
