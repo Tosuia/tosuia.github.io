@@ -700,7 +700,15 @@ a:focus-visible {
 :root[data-theme='light'] .calendar-preview {
     box-shadow:
         0 4px 12px rgba(73, 48, 17, 0.10),
-        0 18px 42px rgba(73, 48, 17, 0.18);
+        0 18px 42px rgba(73, 48, 17, 0.28);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+}
+
+:root[data-theme='dark'] .calendar-preview {
+    box-shadow:
+        0 2px 14px rgba(214, 178, 120, 0.10),
+        0 12px 48px rgba(214, 178, 120, 0.26);
     border: 1px solid var(--line);
     border-radius: 50%;
 }
