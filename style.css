@@ -684,7 +684,7 @@ a:focus-visible {
     height: auto;
     margin: 18px auto;
     border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
+    border-radius: 50%;
 }
 
 :root[data-theme='light'] .calendar-preview {
@@ -692,7 +692,7 @@ a:focus-visible {
         0 4px 12px rgba(73, 48, 17, 0.10),
         0 18px 42px rgba(73, 48, 17, 0.18);
     border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
+    border-radius: 50%;
 }
 
 @keyframes shimmer {
