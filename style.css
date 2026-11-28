@@ -23,6 +23,7 @@
     --radius-xl: 34px;
     --radius-lg: 24px;
     --radius-md: 16px;
+    --divider-spacing: 30px;
 }
 
 :root[data-theme='light'] {
@@ -427,6 +428,15 @@ a:focus-visible {
     background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
 }
 
+.page-divider {
+    width: min(800px, 100%);
+    height: 2px;
+    margin: var(--divider-spacing) auto;
+    padding: 0;
+    border: 0;
+    background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
 .downloads a {
     position: relative;
     display: inline-flex;
@@ -792,3 +802,30 @@ a:focus-visible {
     }
 }
 
+/* ---------- Consistent page-divider spacing ---------- */
+
+.hero {
+    padding-bottom: 0;
+}
+
+.download-grid {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.notice-stack {
+    display: flow-root;
+}
+
+.notice-stack > :first-child {
+    margin-top: 0;
+}
+
+.feedback {
+    margin-bottom: 0;
+}
+
+.support {
+    margin-top: 0;
+    padding-top: 0;
+}
